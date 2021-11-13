@@ -1,0 +1,12 @@
+.mobile-head{
+    color: orangered;
+}
+.h-2{
+    color:rgb(119, 9, 153);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.background{
+    background-color:rgb(103, 196, 149) ;
+    border: 2px solid yellow;
+    border-radius: 25px;
+}

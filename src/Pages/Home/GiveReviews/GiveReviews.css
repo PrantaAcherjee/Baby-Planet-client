@@ -1,0 +1,15 @@
+.manage-service form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+.manage-service form input ,textarea{
+    width: 35%;
+    margin-bottom: 30px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    background-color: gold;
+}

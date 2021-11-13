@@ -1,0 +1,10 @@
+.one{
+border: 2px solid skyblue;
+background-color: rgb(104, 127, 170);
+color: rgba(245, 239, 221, 0.973);
+}
+.two{
+border: 2px solid cornflowerblue ;
+background-color: rgb(182, 211, 124);
+font-weight: 500;
+}
