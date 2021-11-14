@@ -4,13 +4,13 @@ import React ,{useState,useEffect}from 'react';
 const MyOrder = () => {
     const [myOrders,setMyOrders]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/orders')
+        fetch('https://quiet-hamlet-36498.herokuapp.com/orders')
         .then(res=>res.json())
         .then(data=>setMyOrders(data));
     },[])
 
     const handleRemove=id=>{
-        const url=`http://localhost:5000/orders/${id}`
+        const url=`https://quiet-hamlet-36498.herokuapp.com/orders/${id}`
         fetch(url,{
             method:"DELETE"
         })

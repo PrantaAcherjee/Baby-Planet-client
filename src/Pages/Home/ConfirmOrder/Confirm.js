@@ -12,7 +12,7 @@ const Confirm = () => {
   const onSubmit = data => {
     console.log(data);
     data.email = user?.email;
-    fetch("http://localhost:5000/orders", {
+    fetch("https://quiet-hamlet-36498.herokuapp.com/orders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

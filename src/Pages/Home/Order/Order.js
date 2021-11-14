@@ -6,7 +6,7 @@ const Order = () => {
     const {_id}=useParams();
     const [order,setOrder]=useState({});
     useEffect(()=>{
-       fetch(`http://localhost:5000/products/${_id}`)
+       fetch(`https://quiet-hamlet-36498.herokuapp.com/products/${_id}`)
         .then(res=>res.json())
         .then(data=>setOrder(data));
     },[])

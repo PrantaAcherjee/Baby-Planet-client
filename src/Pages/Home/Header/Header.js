@@ -7,11 +7,13 @@ import UseAuth from './../../../Hooks/UseAuth';
 const Header = () => {
     const { user, logOut } = UseAuth();
     return (
-        <div className="row ">
+        <div className="row">
             <div className="col-md-5">
-             <h3 className="">BABY WALKER</h3>
+             <div><h2 className="text-danger">BABY WALKER <i class="fas fa-baby-carriage text-info"></i></h2>
+             
+             </div>
             </div>
-            <div className="col-md-7 menu-bar">
+            <div className="col-md-7 menu-bar ">
             <Link to="/home">Home</Link>
             <Link to="/products">Products</Link>
             <Link to="/addproducts">Add Products</Link>
@@ -23,7 +25,7 @@ const Header = () => {
             }
             {
                 user?.email &&
-                <button onClick={logOut}>Logout</button>
+                <button className="bg-black text-white" onClick={logOut}>Logout</button>
             }
             </div>
         </div>
