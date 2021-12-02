@@ -15,7 +15,6 @@ import Register from './Pages/Home/Register/Register';
 import Dashboard from './Pages/Home/Dashboard/Dashboard';
 import Payment from './Pages/Home/Payment/Payment';
 import MyOrder from './Pages/Home/MyOrder/MyOrder';
-import Confirm from './Pages/Home/ConfirmOrder/Confirm';
 import Header from './Pages/Home/Header/Header';
 import GiveReviews from './Pages/Home/GiveReviews/GiveReviews';
 
@@ -70,9 +69,6 @@ function App() {
       <Route path="/myorder">
         <MyOrder></MyOrder>
       </Route>
-      <PrivateRoute path="/confirm/:_id">
-        <Confirm></Confirm>
-      </PrivateRoute>
        <Route  path="*">
         <Error></Error>
       </Route>
