@@ -1,18 +1,17 @@
 .bg{
     background-color:rgb(189, 161, 216);
 }
-.pack-div{
-    
-    border: 2px solid yellow;
-}
+ 
+ 
 .single-pack{
-    background-color:rgb(214, 141, 114);
-    border: 3px solid rgb(154, 154, 219);
+    background-color:lightgray;
+    border: 3px solid darkgray;
     margin: 0,5,0,5;
     border-radius: 20px;
+     
 }
 .single-pack:hover{
-     background-color:rgb(206, 138, 56);
+     background-color:rgb(68, 192, 64);
 }
 .name-color{
     color: rgb(48, 18, 131);

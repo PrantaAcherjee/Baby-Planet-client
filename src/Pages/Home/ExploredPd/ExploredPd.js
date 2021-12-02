@@ -14,9 +14,9 @@ fetch('https://quiet-hamlet-36498.herokuapp.com/products')
         <div className="mt-3 bg ">
             <h2 className="pack-h1"><span style={{color:'yellow'}}> OUR ALL PRODUCTS</span></h2>
                     
-<div class="row row-cols-1 row-cols-md-2 g-6 pack-div">
+<div class="row row-cols-1 row-cols-md-2 g-6">
   {products.map(pd=><div
-  className="col single-pack" key={pd.id}>
+  className="" key={pd.id}>
     
     <img className="img-fluid rounded" src={pd.img} alt="" />
     <h2 className="name-color">{pd.name}</h2>
