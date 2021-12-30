@@ -31,21 +31,14 @@ const useFirebase = () => {
 
     }
 
-    const registerWithEmailPassword = e => {
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user)
-            })
-        e.preventDefault();
+    const registerWithEmailPassword = () => {
+    return createUserWithEmailAndPassword(auth, email, password)
+             
     }
 
     const logInWithEmailPassword = () => {
-        signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const user = result.user
-                console.log(user)
-            })
+        return signInWithEmailAndPassword(auth, email, password);
+
     }
 
 
