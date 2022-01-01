@@ -22,7 +22,9 @@ const PrivateRoute = (props) => {
                 }}
             >
 
-            </Redirect>}
+            </Redirect>
+            
+        }
         >
 
 

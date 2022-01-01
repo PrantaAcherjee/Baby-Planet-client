@@ -2,7 +2,7 @@ import React from 'react';
 import "./MobileApp.css"
 const MobileApp = () => {
     return (
-        <div className="">
+        <div className="py-4">
             <h2 className="h-2">Download Our Mobile App</h2>
             <br />
             <div className="row">
@@ -35,7 +35,7 @@ const MobileApp = () => {
 
                 </div>
                 <div className="col-md-9">
-                    <img src="http://rn53themes.net/themes/demo/travelz/images/mobile.png" alt="" />
+                    <img className='img-fluid' src="http://rn53themes.net/themes/demo/travelz/images/mobile.png" alt="" />
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ import UseAuth from '../../../Hooks/UseAuth';
 
 
 const Register = () => {
-    const { registerWithEmailPassword, handleEmailChange, handlePasswordChange } = UseAuth();
+    const { registerWithEmailPassword, handleEmailChange, handlePasswordChange,saveUser} = UseAuth();
     const location= useLocation();
     const history=useHistory();
     const destination=location?.state?.from || "/home";
@@ -14,6 +14,7 @@ const Register = () => {
     registerWithEmailPassword()
     .then(result => {
         const user = result.user;
+        saveUser(user.email)
         console.log(user);
     })
     history.replace(destination);

@@ -30,20 +30,18 @@ const MyOrder = () => {
             {myOrders.map(pd=><div
             className="col single-pack" key={pd._id}>
              <h2 className="name-color"> Client Name: {pd.name}</h2>
-        <h5>Email: {pd.email}</h5>
-        <h6>Product Key: {pd.Key}</h6>
-        <p>Phone: <small>{pd.phone}</small></p>
+            <h5>Email: {pd.email}</h5>
+            <h6>Product Key: {pd.Key}</h6>
+            <p>Phone: <small>{pd.phone}</small></p>
 
         {/* delete Button */}
-        <button className="text-white bg-danger m-5 p-3 rounded-pill" onClick={()=>handleRemove(pd._id)}>Remove</button>
+        <button onClick={()=>handleRemove(pd._id)}>Remove From Cart</button>
     
         </div>)
 
-
-  }
-  
+  } 
 </div> 
-        </div>
+</div>
     );
 };
 

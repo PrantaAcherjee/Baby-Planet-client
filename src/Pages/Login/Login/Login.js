@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 const Login = () => {
-    const {signInUsingGoogle,logInWithEmailPassword,handleEmailChange, handlePasswordChange} = UseAuth();
+    const {signInUsingGoogle,logInWithEmailPassword,handleEmailChange, handlePasswordChange,saveGoogleUser} = UseAuth();
     const location=useLocation();
     const redirect_uri=location.state?.from || '/home'
     const history=useHistory();
@@ -16,7 +16,9 @@ const Login = () => {
 const handleGoogleLogin=()=>{
 signInUsingGoogle()
 .then(result => {
-   history.push(redirect_uri) 
+    const user = result.user
+    saveGoogleUser(user.email)
+    history.push(redirect_uri) 
 })
     }
 const handleEmailPasswoedLogin=(e)=>{

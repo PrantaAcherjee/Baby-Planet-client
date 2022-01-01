@@ -20,7 +20,7 @@ const GiveReviews = () => {
              
             <div className="manage-service">
                 <br />
-            <h2 className="h-2">Give Reviews your own</h2>
+            <h2 className="h-2">Give Your Valuable Reviews</h2>
             <br />
             <form onSubmit={handleSubmit(onSubmit)}>
              <input {...register("Name")} placeholder="Name"/>

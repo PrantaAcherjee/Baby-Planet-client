@@ -1,5 +1,4 @@
 import React ,{useState,useEffect}from 'react';
-
 const Reviews = () => {
     const [review,setReview]=useState([]);
     useEffect(()=>{
@@ -9,22 +8,16 @@ const Reviews = () => {
     },[])
     return (
         <div>
-            <h2 className="h-2">CUSTOMER REVIEWS</h2>
-             
-            <div class="row row-cols-1 row-cols-md-3 w-50 mx-auto g-6">
+            <h2 className="h-2 py-4">CUSTOMER REVIEWS</h2>
+           <div class="row row-cols-1 row-cols-md-3 w-50 mx-auto g-6">
             {review.map(pd=><div
-            className=" single-pack" key={pd._id}>
-             <h2 className="name-color"> Client Name: {pd.name}</h2>
-        <h5>Name: {pd.Name}</h5>
-        
-        <p>Comment:{pd.description}</p>
+            className=" single-pack" key={pd._id}>            
+            <h5>Name: {pd.Name}</h5>      
+            <p>Comment:{pd.description}</p>
     
         </div>)
-
-
-  }
-  
-</div> 
+  } 
+        </div> 
         </div>
     );
 };

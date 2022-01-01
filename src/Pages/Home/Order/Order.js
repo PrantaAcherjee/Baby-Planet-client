@@ -56,9 +56,9 @@ const Order = () => {
     <input type="submit" />
     </form>
 
-       </div>
+    </div>
          
-        </div>
+    </div>
     );
 };
 

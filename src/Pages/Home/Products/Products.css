@@ -1,3 +1,11 @@
 .name-color{
-    color: rgb(63, 44, 192);
+    color:mediumturquoise
+}
+.h2{
+    color:indigo;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.image{
+    border-radius: 15px;
+    padding-top: 5px;
 }

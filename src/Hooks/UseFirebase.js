@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut,getIdToken, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import firebaseAuthentication from './../Pages/Login/Firebase/Firebase.init';
 firebaseAuthentication();
 
@@ -9,8 +9,10 @@ const useFirebase = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading,setIsLoading]=useState(true);
-
+    const [admin,setAdmin]=useState(false);
+    const [token,setToken]=useState('');
     const auth = getAuth();
+
     const googleProvider = new GoogleAuthProvider();
     const signInUsingGoogle = () => {
         setIsLoading(true);
@@ -41,17 +43,28 @@ const useFirebase = () => {
 
     }
 
-
+ // state observer
     useEffect(() => {
         onAuthStateChanged(auth, user => {
-            if (user) {
-                // console.log('inside state changed', user)
-                setuser(user)
+            if (user) {   
+             setuser(user)
+             getIdToken(user)
+             .then(idToken=>{
+             setToken(idToken)
+             }) 
             }
             setIsLoading(false);
         })
     }, [])
 
+    // is admin check
+    useEffect(()=>{
+        fetch(`http://localhost:5000/users/${user.email}`)
+        .then(res=>res.json())
+        .then(data=>setAdmin(data.admin))
+    },[user.email])
+
+    // log out section
     const logOut = () => {
         setIsLoading(true);
         signOut(auth)
@@ -61,16 +74,46 @@ const useFirebase = () => {
             .finally(()=>setIsLoading(false));
     }
 
+    // save user to database
+    const saveUser = (email) =>{
+        const user={email};
+        fetch('http://localhost:5000/users',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(user)
+        })
+        .then()
+    }
+    const saveGoogleUser = (email) =>{
+        const user={email};
+        fetch('http://localhost:5000/users',{
+            method:'PUT',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(user)
+        })
+        .then()
+    }
+        
+
     return {
+         
         signInUsingGoogle,
         logOut,
         isLoading,
         user,
         error,
+        admin,
+        token,
         handleEmailChange,
         handlePasswordChange,
         registerWithEmailPassword,
         logInWithEmailPassword,
+        saveUser,
+        saveGoogleUser,
     }
 }
 
