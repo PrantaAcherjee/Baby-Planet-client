@@ -3,7 +3,7 @@ import React from 'react';
 import "./About.css"
 const AboutUs = () => {
     return (
-        <div className="row">
+        <div className="row py-5">
              <div className="col-md-8 one">
                 <h1>About Us</h1>
                 <p>

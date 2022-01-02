@@ -52,9 +52,9 @@ let { path, url } = useRouteMatch();
              
           </div>
 
-          <div className="col-md-2 "></div>
+           
 
-          <div className="col-md-7 details-part">
+          <div className="col-md-9 details-part">
            
         <Switch>
             <Route exact path={path}>

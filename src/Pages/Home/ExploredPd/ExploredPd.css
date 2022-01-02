@@ -1,18 +1,8 @@
 .bg{
-    background-color:rgb(189, 161, 216);
-}
- 
- 
-.single-pack{
-    background-color:lightgray;
-    border: 3px solid darkgray;
-    margin: 0,5,0,5;
-    border-radius: 20px;
+    background-color:rgb(190, 183, 197);
      
 }
-.single-pack:hover{
-     background-color:rgb(68, 192, 64);
-}
+ 
 .name-color{
     color: rgb(48, 18, 131);
 }

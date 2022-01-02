@@ -18,16 +18,17 @@ const GiveReviews = () => {
     return (
         
              
-            <div className="manage-service">
-                <br />
+            <div className="manage-service whole-bg">
+            <br />
             <h2 className="h-2">Give Your Valuable Reviews</h2>
             <br />
             <form onSubmit={handleSubmit(onSubmit)}>
              <input {...register("Name")} placeholder="Name"/>
             <textarea {...register("description")} placeholder="Description" />
-             <input {...register("img")} placeholder="image URL" />
+             
+            <input {...register("img")} placeholder="image URL" />
             <input type="submit" />
-                </form>
+            </form>
         </div>
          
     );

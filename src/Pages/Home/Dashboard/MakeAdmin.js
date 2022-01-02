@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     const handleMakeAdmin=(e)=>{
     const user={email}
     e.target.reset() 
-    fetch('http://localhost:5000/users/admin',{
+    fetch(' https://quiet-hamlet-36498.herokuapp.com/users/admin',{
         method:"PUT",
         headers:{
             'authorization':`Bearer ${token}`,
@@ -33,7 +33,7 @@ const MakeAdmin = () => {
      e.preventDefault()
     }
     return (
-        <div className='row col-sm-12'>
+        <div className='row col-sm-12 pt-5'>
             <h2>Make an admin</h2>
             <br />
             <div>
