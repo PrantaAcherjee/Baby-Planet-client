@@ -23,13 +23,13 @@ const MyOrder = () => {
         })
     }
     return (
-        <div>
-            <h2 className="h-2">My all orders</h2>
-             
+        <div className='py-4'>
+            <h2 className="h-2">SHOPPING BAG</h2>
+             <br />
             <div class="row row-cols-1 row-cols-md-1 pack-div w-50 mx-auto">
             {myOrders.map(pd=><div
             className="col single-pack" key={pd._id}>
-             <h2 className="name-color"> Client Name: {pd.name}</h2>
+             <h4 className="name-color"> Client Name: {pd.name}</h4>
             <h5>Email: {pd.email}</h5>
             <h6>Product Key: {pd.Key}</h6>
             <p>Phone: <small>{pd.phone}</small></p>

@@ -12,7 +12,7 @@ import PrivateRoute from './Pages/Home/PrivateRoute/PrivateRoute';
 import Register from './Pages/Home/Register/Register';
 import Dashboard from './Pages/Home/Dashboard/Dashboard'; 
 import Header from './Pages/Home/Header/Header';
-import Payments from './Pages/Home/Dashboard/Payments';
+ 
  
 
 function App() {
@@ -49,9 +49,6 @@ function App() {
       <PrivateRoute path="/dashboard">
         <Dashboard></Dashboard>
       </PrivateRoute> 
-      <PrivateRoute path="/payment">
-        <Payments></Payments>
-      </PrivateRoute>
        <Route  path="*">
         <Error></Error>
       </Route>

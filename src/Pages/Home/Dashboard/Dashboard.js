@@ -14,12 +14,14 @@ import AddProducts from '../../Home/AddProducts/AddProducts'
 import MyOrder from '../MyOrder/MyOrder';
 import UseAuth from '../../../Hooks/UseAuth'; 
 import AdminRoute from '../AdminRoute/AdminRoute';
+import ManageService from './ManageService';
+import Payments from './Payments';
 
 const Dashboard = () => {
 const {admin}=UseAuth();
 let { path, url } = useRouteMatch();   
     return (
-        <div className='row'>
+        <div className='pt-4 row'>
           <div className="col-md-3 py-5 links-part">
 
             <Link style={{textDecoration:'none',color:'grey'}} to={`${url}`}>
@@ -39,6 +41,11 @@ let { path, url } = useRouteMatch();
               GIVE REVIEWS
             </Link>
             <br />
+            <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/PAYMENTS`}>
+               PAYMENTS
+            </Link>
+            <br />
+
               {admin && <div>
                 
                 <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/makeAdmin`}>
@@ -48,7 +55,11 @@ let { path, url } = useRouteMatch();
               <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/addservices`}>
               Add Services
               </Link>
-                </div>}
+              <br />
+              <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/manageservices`}>
+               Manage Services
+              </Link>
+              </div>}
              
           </div>
 
@@ -66,11 +77,17 @@ let { path, url } = useRouteMatch();
             <AdminRoute exact path={`${path}/addservices`}>
              <AddProducts></AddProducts>
             </AdminRoute>
+            <AdminRoute exact path={`${path}/manageservices`}>
+            <ManageService></ManageService>
+            </AdminRoute>
             <Route exact path={`${path}/reviews`}>
             <GiveReviews></GiveReviews>
             </Route>
             <Route exact path={`${path}/myorders`}>
             <MyOrder></MyOrder>
+            </Route>
+            <Route exact path={`${path}/PAYMENTS`}>
+             <Payments></Payments>
             </Route>
         </Switch>
          </div>  

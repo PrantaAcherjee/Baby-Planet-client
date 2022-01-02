@@ -2,8 +2,8 @@ import React from 'react';
 
 const Payments = () => {
     return (
-        <div>
-            <h2>payments comming soon</h2>
+        <div className='pt-4'>
+            <h3>PAY YOUR CHARGE WITH SSL COMMERCE</h3>
         </div>
     );
 };
