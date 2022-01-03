@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -6,19 +6,27 @@ import UseAuth from '../../../Hooks/UseAuth';
 
 
 const Register = () => {
-    const { registerWithEmailPassword, handleEmailChange, handlePasswordChange,saveUser} = UseAuth();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const { registerWithEmailPassword, error} = UseAuth();
     const location= useLocation();
     const history=useHistory();
-    const destination=location?.state?.from || "/home";
+   
+
+    const handleEmailChange = e => {
+        setEmail(e.target.value);
+        //console.log(e.target.value)
+    }
+    const handlePasswordChange = e => {
+        setPassword(e.target.value);
+        //console.log(e.target.value)
+
+    }
+
     const handleRegister=(e)=>{    
-    registerWithEmailPassword()
-    .then(result => {
-        const user = result.user;
-        saveUser(user.email)
-        console.log(user);
-    })
-    history.replace(destination);
-    e.preventDefault();
+    registerWithEmailPassword(email,password,location,history)
+    e.preventDefault()  
     }
     return (
         <div className="row">
@@ -33,7 +41,11 @@ const Register = () => {
                         <br />
                         <br />
                         <button className="bg-success rounded-pill text-white px-2" type="submit">Register</button>
+                        {error &&
+                        <p>Wrong info you are given !</p>           
+                        }
                     </form>
+                    
                     <br />
                     <br />
                     <p className="fw-bold text-danger">Alredy Registered?</p>

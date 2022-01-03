@@ -8,7 +8,7 @@ const PrivateRoute = (props) => {
     const { children, ...rest } = props
     const { user,isLoading } = UseAuth();
     if(isLoading){
-        return <div class="spinner-border text-danger" role="status">
+        return <div class="mt-5 spinner-border text-danger" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     }

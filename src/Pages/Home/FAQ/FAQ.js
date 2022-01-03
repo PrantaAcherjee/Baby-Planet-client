@@ -6,7 +6,7 @@ const FAQ = () => {
         <div className="row">
            <div className="col-md-6">
              <br />
-            <h4>Let's disscuss about your question</h4>
+             
             <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>Question:1

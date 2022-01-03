@@ -6,41 +6,62 @@ firebaseAuthentication();
 const useFirebase = () => {
     const [user, setuser] = useState({});
     const [error, setError] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const [isLoading,setIsLoading]=useState(true);
     const [admin,setAdmin]=useState(false);
     const [token,setToken]=useState('');
     const auth = getAuth();
 
+  // Google  log in  
     const googleProvider = new GoogleAuthProvider();
-    const signInUsingGoogle = () => {
+    const signInUsingGoogle = (location,history) => {
+       setIsLoading(true);
+       signInWithPopup(auth, googleProvider)
+        .then(result => {
+        const user = result.user  
+        saveGoogleUser(user.email)
+        const redirect_uri=location?.state?.from || "/home";
+        history.push(redirect_uri) 
+        })
+
+        .catch(error => {
+        setError(error.message)
+        })
+        .finally(()=>setIsLoading(false));
+    }
+    
+// register with email pasword
+    const registerWithEmailPassword = (email, password,location, history) => {
+    setIsLoading(true)
+    createUserWithEmailAndPassword(auth, email, password)
+    .then(result => {
+        setError("");
+        const user = result.user;         
+        saveUser(email)
+        const destination=location?.state?.from || "/home";
+        history.replace(destination)
+    })
+    .catch(error => {
+    setError(error.message)
+    })
+    .finally(()=>setIsLoading(false)); 
+         
+    }
+// login with email password
+    const logInWithEmailPassword = (email,password,location,history) => {
         setIsLoading(true);
-       return signInWithPopup(auth, googleProvider)
-
-            .catch(error => {
-                setError(error.message)
-            })
-            .finally(()=>setIsLoading(false));
-    }
-    const handleEmailChange = e => {
-        setEmail(e.target.value);
-        //console.log(e.target.value)
-    }
-    const handlePasswordChange = e => {
-        setPassword(e.target.value);
-        //console.log(e.target.value)
-
-    }
-
-    const registerWithEmailPassword = () => {
-    return createUserWithEmailAndPassword(auth, email, password)
-             
-    }
-
-    const logInWithEmailPassword = () => {
-        return signInWithEmailAndPassword(auth, email, password);
-
+        signInWithEmailAndPassword(auth, email, password)
+        .then(result => {
+            const user = result.user
+            setError("");
+            console.log(user);
+            const redirect_uri=location.state?.from || "/";
+            history.push(redirect_uri) 
+        })
+        .catch(error => {
+        setError(error.message)
+        })
+        .finally(()=>setIsLoading(false));
+        
     }
 
  // state observer
@@ -59,9 +80,14 @@ const useFirebase = () => {
 
     // is admin check
     useEffect(()=>{
-        fetch(` https://quiet-hamlet-36498.herokuapp.com/users/${user.email}`)
-        .then(res=>res.json())
-        .then(data=>setAdmin(data.admin))
+        if(user.email){
+            setIsLoading(true)
+            fetch(` https://quiet-hamlet-36498.herokuapp.com/users/${user.email}`)
+            .then(res=>res.json())
+            .then(data=>setAdmin(data.admin)) 
+            .finally(()=>setIsLoading(false)); 
+        }
+
     },[user.email])
 
     // log out section
@@ -70,6 +96,9 @@ const useFirebase = () => {
         signOut(auth)
             .then(() => {
                 setuser({})
+            })
+            .catch(error => {
+            setError(error.message)
             })
             .finally(()=>setIsLoading(false));
     }
@@ -108,12 +137,8 @@ const useFirebase = () => {
         error,
         admin,
         token,
-        handleEmailChange,
-        handlePasswordChange,
         registerWithEmailPassword,
         logInWithEmailPassword,
-        saveUser,
-        saveGoogleUser,
     }
 }
 

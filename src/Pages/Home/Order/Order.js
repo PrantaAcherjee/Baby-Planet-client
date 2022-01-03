@@ -35,7 +35,7 @@ const Order = () => {
       }
 
     return (
-        <div className="row">
+        <div className="row pt-5">
         <h2 className="h-2">Get Your Product Soon</h2>
         <div className="col-md-7">
         <h2 className="text-success">Name: {order.name}</h2>
