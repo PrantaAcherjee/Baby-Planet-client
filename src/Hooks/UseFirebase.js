@@ -55,7 +55,7 @@ const useFirebase = () => {
             }
             setIsLoading(false);
         })
-    }, [])
+    }, [auth])
 
     // is admin check
     useEffect(()=>{

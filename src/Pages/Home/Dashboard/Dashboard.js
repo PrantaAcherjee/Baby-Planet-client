@@ -25,39 +25,38 @@ let { path, url } = useRouteMatch();
           <div className="col-md-3 py-5 links-part">
 
             <Link style={{textDecoration:'none',color:'grey'}} to={`${url}`}>
-             DASHBOARD
+            <i class="fas fa-baby"></i> DASHBOARD
             </Link>
             <br />
-            <Link style={{textDecoration:'none',color:'grey'}} to="/home">
-             GET ORDER
+            <Link style={{textDecoration:'none',color:'grey'}} to="/home"><i class="fas fa-plus-circle"></i>  GET ORDER
             </Link>
             <br />
             <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/myorders`}>
-             ALL ORDERS
+             <i class="fas fa-cart-arrow-down"></i> ALL ORDERS 
             </Link>
             <br />
             
             <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/reviews`}>
-              GIVE REVIEWS
+            <i class="far fa-comment-dots"></i> GIVE REVIEWS
             </Link>
             <br />
             <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/PAYMENTS`}>
-               PAYMENTS
+            <i class="fas fa-money-check-alt"></i>  PAYMENTS
             </Link>
             <br />
 
               {admin && <div>
                 
                 <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/makeAdmin`}>
-              Make Admin
+                <i class="fas fa-user-plus"></i> Make Admin
               </Link>
               <br />
               <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/addservices`}>
-              Add Services
+              <i class="fas fa-plus-square"></i> Add Services
               </Link>
               <br />
               <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/manageservices`}>
-               Manage Services
+              <i class="fas fa-tasks"></i> Manage Services
               </Link>
               </div>}
              

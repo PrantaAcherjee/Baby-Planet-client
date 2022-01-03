@@ -1,4 +1,5 @@
 import React ,{useState,useEffect}from 'react';
+import Rating from 'react-rating';
 import './Reviews.css';
  
 
@@ -8,6 +9,7 @@ const Reviews = () => {
         fetch('https://quiet-hamlet-36498.herokuapp.com/reviews')
         .then(res=>res.json())
         .then(data=>setReview(data));
+        
     },[])
     return (
         <div>
@@ -17,13 +19,18 @@ const Reviews = () => {
             {review.map(pd=><div
              key={pd._id}>            
             <div className='single-div'>
-            <h5>{pd.Name}</h5>      
-            <p>{pd.description}</p>
+            <h5 className='text-success'>{pd.Name}</h5>      
+            <p>{pd.description.slice(0,100)}</p>
             
+            <Rating
+            initialRating={pd.ratings}
+            emptySymbol="far fa-star style"
+            fullSymbol="fas fa-star style"
+            readonly></Rating>           
             </div>
     
         </div>)
-  } 
+  }  
         </div> 
         </div>
     );

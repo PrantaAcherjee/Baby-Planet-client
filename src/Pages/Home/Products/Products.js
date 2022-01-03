@@ -26,7 +26,7 @@ fetch('https://quiet-hamlet-36498.herokuapp.com/products')
       <p className="">Warrenty : {pd.warrenty}  years</p>
       
       <Link to={`/order/${pd._id}`}>
-      <button className="bg-info text-white rounded-pill p-1">ADD TO CART</button>
+      <button className="mb-3 bg-info text-white rounded-pill p-1"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
      </Link>
       </div>)
 

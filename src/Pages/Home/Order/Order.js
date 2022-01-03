@@ -15,7 +15,7 @@ const Order = () => {
        fetch(`https://quiet-hamlet-36498.herokuapp.com/products/${_id}`)
         .then(res=>res.json())
         .then(data=>setOrder(data));
-    },[])
+    },[_id])
     const onSubmit = data => {
         console.log(data);
         data.email = user?.email;
