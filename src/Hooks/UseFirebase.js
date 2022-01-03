@@ -35,7 +35,7 @@ const useFirebase = () => {
     createUserWithEmailAndPassword(auth, email, password)
     .then(result => {
         setError("");
-        const user = result.user;         
+                 
         saveUser(email)
         const destination=location?.state?.from || "/home";
         history.replace(destination)

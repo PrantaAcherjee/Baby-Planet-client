@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import UseAuth from '../../../Hooks/UseAuth';
 import { Link } from 'react-router-dom';
+import { Alert } from 'react-bootstrap';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -42,7 +43,7 @@ const handleEmailPasswordLogin=(e)=>{
             </div>
             <div className="col-md-4">
                 <br /><br /> <br /> <br />
-            <button className="bg-warning rounded-pill" onClick={handleGoogleLogin}>SIGN IN WITH GOOGLE</button>
+            <button className="bg-danger text-white fw-bold rounded-pill" onClick={handleGoogleLogin}><i class="fab fa-google"></i> SIGNIN WITH GOOGLE</button>
             <br /> 
              <br /> 
             <form onSubmit={handleEmailPasswordLogin} >
@@ -57,12 +58,14 @@ const handleEmailPasswordLogin=(e)=>{
                     <br />
                     <button className="bg-success text-white px-2 rounded-pill " type="submit">SIGN IN</button>
                     {error &&
-                    <p>Wrong info you are given !</p>           
+                    <Alert className='danger'>
+                    You are given wrong info  
+                    </Alert>          
                     }
             </form>
                 <br />
                 <h5 className="fw-bold text-danger">Are You New User?</h5>
-                <Link to="/register">Please Register</Link>
+                <Link style={{textDecoration:'none',fontWeight:'bold'}} to="/register">Please Register</Link>
             </div>
 
         </div>

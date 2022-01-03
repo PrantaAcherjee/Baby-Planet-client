@@ -34,7 +34,7 @@ const MakeAdmin = () => {
     }
     return (
         <div className='row col-sm-12 pt-5'>
-            <h2>Make an admin</h2>
+            <h2 className="text-info">Make an admin</h2>
             <br />
             <div>
                 <form onSubmit={handleMakeAdmin}>
@@ -44,7 +44,7 @@ const MakeAdmin = () => {
                 <br />
               {
                   success &&
-                  <Alert variant='success'>
+                  <Alert className='success'>
                    Successfully make an admin !
                    </Alert>
               }  

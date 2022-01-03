@@ -9,7 +9,7 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { registerWithEmailPassword, error} = UseAuth();
+    const {registerWithEmailPassword} = UseAuth();
     const location= useLocation();
     const history=useHistory();
    
@@ -40,16 +40,14 @@ const Register = () => {
                         <input onChange={handlePasswordChange} type="password" name="password" placeholder="Enter your password" required />
                         <br />
                         <br />
-                        <button className="bg-success rounded-pill text-white px-2" type="submit">Register</button>
-                        {error &&
-                        <p>Wrong info you are given !</p>           
-                        }
+                        <button className="bg-success rounded-pill text-white px-2" type="submit">SIGN UP</button>
+                        
                     </form>
                     
                     <br />
                     <br />
                     <p className="fw-bold text-danger">Alredy Registered?</p>
-                    <Link to="/login">Please Log In</Link>
+                    <Link style={{textDecoration:'none',fontWeight:'bold'}} to="/login">Please Login</Link>
                 </div>
             </div>
             <div className="col-md-4">
