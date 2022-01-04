@@ -13,7 +13,8 @@ const Header = () => {
         <div className="menu-bar my-5">
         <Navbar  fixed="top" collapseOnSelect expand="lg" bg="light">
         <Container>
-        <Navbar.Brand className="text-danger logo"> <h2>BABY WALKER <i class="fas fa-baby-carriage text-info"></i></h2> </Navbar.Brand>
+        <Navbar.Brand><i class="text-secondary fas fa-baby-carriage "> 
+         <span style={{padding:'3px',color:'coral'}}>BABY WALKER</span> </i></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
          <Nav className="me-auto">

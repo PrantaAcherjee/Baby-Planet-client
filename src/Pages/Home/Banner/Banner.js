@@ -4,7 +4,7 @@ import './Banner.css'
 
 const Banner = () => {
     return (
-        <div className=" row py-7 my-5 banner d-flex justify-content-center align-items-center">
+        <div className="row py-7 my-5 banner d-flex justify-content-center align-items-center">
             <div className="col-md-5">
                 <h1 className="text-uppercase text-warning">GIVE YOUR BABY MORE COMFORT</h1>
                 <h3 className="text-uppercase color">HAVE A RELAX</h3>

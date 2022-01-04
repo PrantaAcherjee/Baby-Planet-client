@@ -13,7 +13,7 @@ const Footer = () => {
         <div>   
                 
                 <div>
-                    <h4 className="text-danger">BABY WALKER</h4>
+                    <h4><span style={{color:'coral',paddingBottom:'3px',fontWeight:'bold'}}>BABY WALKER</span></h4>
                 <div className="d-flex align-items-center justify-content-around">
                  <div><h6>ADRESS :</h6></div>
                 <div><small>205 Olazu Familia, <br /> Herba Street Front USA</small></div>
@@ -42,7 +42,7 @@ const Footer = () => {
                 </div>
                 <div className="col-md-3">
                 <div className="">
-        <h4 className="text-warning">OUR CATEGORIES</h4>
+        <h4 className="text-info">OUR CATEGORIES</h4>
         Clothing Sets <br />
         Baby Girl Sets <br />
         Baby Boys Sets <br />
@@ -63,7 +63,7 @@ const Footer = () => {
         Delevery Schedule <br />
         Today's Deals <br />
         Get a Call <br />
-        Online Enquiry <br />
+         
         </div>
         </div>
        
@@ -84,7 +84,7 @@ const Footer = () => {
     </div>
             
     
-
+    <p className='pt-4 text-warning'>&copy; COPYRIGHT 2022 || ALL RIGHT RESERVED BABY WALKER</p>
 </div>
     );
 };

@@ -15,7 +15,7 @@ const Reviews = () => {
         <div>
             <h2 className="text-secondary pt-5 px-3">USER'S FEADBACK </h2>
             <br />
-           <div class="row row-cols-2 row-cols-md-4  w-75 mx-auto ">
+           <div class="row row-cols-3 row-cols-md-4  w-75 mx-auto ">
             {review.map(pd=><div
              key={pd._id}>            
             <div className='single-div'>
