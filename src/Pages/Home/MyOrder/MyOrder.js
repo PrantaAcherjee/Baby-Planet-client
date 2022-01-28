@@ -24,17 +24,17 @@ const MyOrder = () => {
     }
     return (
         <div className='py-4'>
-            <h2 className="h-2">SHOPPING BAG</h2>
-             <br />
-            <div class="row row-cols-1 row-cols-md-1 pack-div w-50 mx-auto">
+            <h3 className="text-secondary">SHOPPING BAG</h3>
+            <div class="row row-cols-1 row-cols-md-1  w-50 mx-auto">
             {myOrders.map(pd=><div
             className="col single-pack" key={pd._id}>
-             <h4 className="name-color"> Client Name: {pd.name}</h4>
-            <h5>Email: {pd.email}</h5>
+            <p>Baby Walker</p>
+            <small>{pd._id}</small>
+            <p>Email: {pd.email}</p>
             <p>Phone: <small>{pd.phone}</small></p>
 
         {/* delete Button */}
-        <button onClick={()=>handleRemove(pd._id)}>Remove From Cart</button>
+        <button className='bg-warning text-white' onClick={()=>handleRemove(pd._id)}>Remove From Cart</button>
     
         </div>)
 
