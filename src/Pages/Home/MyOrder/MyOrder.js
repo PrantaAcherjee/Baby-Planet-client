@@ -1,10 +1,11 @@
 import React ,{useState,useEffect}from 'react';
-
+import UseAuth from './../../../Hooks/UseAuth';
 
 const MyOrder = () => {
+    const {user}=UseAuth();
     const [myOrders,setMyOrders]=useState([]);
     useEffect(()=>{
-        fetch('https://quiet-hamlet-36498.herokuapp.com/orders')
+        fetch(`https://quiet-hamlet-36498.herokuapp.com/orders?email=${user.email}`)
         .then(res=>res.json())
         .then(data=>setMyOrders(data));
     },[])
@@ -16,7 +17,6 @@ const MyOrder = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data);
             alert('Deleted One');
             const remaining=myOrders.filter(pd=>pd._id!==id);
             setMyOrders(remaining);

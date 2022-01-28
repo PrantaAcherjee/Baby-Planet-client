@@ -35,7 +35,7 @@ const Footer = () => {
             </div>
                 </div>
     </div>
-        </div>
+    </div>
         
         
     </div>
@@ -65,7 +65,7 @@ const Footer = () => {
         Get a Call <br />
          
         </div>
-        
+
         </div>
        
                 </div>
