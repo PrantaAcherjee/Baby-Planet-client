@@ -20,9 +20,11 @@ fetch(`https://quiet-hamlet-36498.herokuapp.com/orders/${productID}`)
             <h4><i class="fas fa-money-check-alt text-success"></i> PAY YOUR CHARGE WITH STRIPE</h4>
             <h4>Baby Walker</h4>
             <h5 className='mb-5'>Please pay: ${pay.price}</h5>
-            <Elements stripe={stripePromise}>
-            <CheckoutForm price={pay.price} />
+            {pay?.price &&
+                <Elements stripe={stripePromise}>
+            <CheckoutForm pay={pay} />
             </Elements>
+            }
         </div>
     );
 };

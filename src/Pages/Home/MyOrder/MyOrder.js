@@ -9,7 +9,7 @@ const MyOrder = () => {
         fetch(`https://quiet-hamlet-36498.herokuapp.com/orders?email=${user.email}`)
         .then(res=>res.json())
         .then(data=>setMyOrders(data));
-    },[])
+    },[user.email])
 
     const handleRemove=id=>{
         const url=`https://quiet-hamlet-36498.herokuapp.com/orders/${id}`
@@ -36,9 +36,11 @@ const MyOrder = () => {
 
         {/* delete Button */}
         <button className='bg-danger text-white' onClick={()=>handleRemove(pd._id)}>Remove From Cart</button>
+        {pd.payment? <button className='bg-info text-white mx-2 px-2'>Paid</button>
+        :
         <Link to={`/dashboard/payments/${pd._id}`}>
         <button className='bg-success text-white mx-2 '>Payment</button>
-        </Link>
+        </Link>}
         </div>)
 
   } 
