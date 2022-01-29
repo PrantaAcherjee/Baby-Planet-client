@@ -2,8 +2,9 @@
 
 Visit my live site [BABY WALKER]( https://baby-walker.web.app/).
 
- - My website about Baby walker related.
- - You can order product by this.
+ - This is a MERN stack web application.
+ - This is about Baby walker related.
+ - You can be order product and pay with stripe.
  - user can review in this site.
  - user will see every services.
  - Admin can manage services
