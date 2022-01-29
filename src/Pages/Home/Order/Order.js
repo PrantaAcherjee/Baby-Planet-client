@@ -50,6 +50,7 @@ const Order = () => {
     <input defaultValue={user.displayName} {...register("name",{ required: true })} />
     <input defaultValue={user.email} {...register("email", { required: true })} />
     <input placeholder="Service Name" defaultValue={order.name} {...register("Service Name",{required:true})}  />
+    <input defaultValue={order.Price} {...register("price",{required:true})}  />
     <input placeholder="Adress" defaultValue="" {...register("adress")} />
     <input placeholder="Phone" defaultValue="" {...register("phone")} />
     {errors.email && <span className="error">This field is required</span>}

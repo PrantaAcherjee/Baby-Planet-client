@@ -40,10 +40,6 @@ let { path, url } = useRouteMatch();
             <i class="far fa-comment-dots"></i> GIVE REVIEWS
             </Link>
             <br />
-            <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/PAYMENTS`}>
-            <i class="fas fa-money-check-alt"></i>  PAYMENTS
-            </Link>
-            <br />
 
               {admin && <div>
                 
@@ -85,7 +81,7 @@ let { path, url } = useRouteMatch();
             <Route exact path={`${path}/myorders`}>
             <MyOrder></MyOrder>
             </Route>
-            <Route exact path={`${path}/PAYMENTS`}>
+            <Route exact path={`${path}/payments/:productID`}>
              <Payments></Payments>
             </Route>
         </Switch>

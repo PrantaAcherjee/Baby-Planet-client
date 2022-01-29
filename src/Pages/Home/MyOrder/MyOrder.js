@@ -1,5 +1,6 @@
 import React ,{useState,useEffect}from 'react';
 import UseAuth from './../../../Hooks/UseAuth';
+import { Link } from 'react-router-dom';
 
 const MyOrder = () => {
     const {user}=UseAuth();
@@ -34,8 +35,10 @@ const MyOrder = () => {
             <p>Phone: <small>{pd.phone}</small></p>
 
         {/* delete Button */}
-        <button className='bg-warning text-white' onClick={()=>handleRemove(pd._id)}>Remove From Cart</button>
-    
+        <button className='bg-danger text-white' onClick={()=>handleRemove(pd._id)}>Remove From Cart</button>
+        <Link to={`/dashboard/payments/${pd._id}`}>
+        <button className='bg-success text-white mx-2 '>Payment</button>
+        </Link>
         </div>)
 
   } 
