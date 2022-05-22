@@ -1,19 +1,20 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import Discount from '../discount/Discount';
+import Features from '../features/Features';
 import Footer from '../Footer/Footer';
- 
-import MobileApp from '../MobileApp/MobileApp';
 import Products from '../Products/Products';
 import Reviews from '../Reviews/Reviews';
 
 const Home = () => {
     return (
-    <div>
+    <div style={{overflow:'hidden'}}>
     
     <Banner></Banner>
+    <Features></Features>
     <Products></Products>
+    <Discount></Discount>
     <Reviews></Reviews>
-    <MobileApp></MobileApp>
     <Footer></Footer>
     </div>
     );

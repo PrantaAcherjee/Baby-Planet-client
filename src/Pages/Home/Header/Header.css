@@ -4,6 +4,18 @@ text-decoration: none;
 font-size: large;
 font-weight: 700;
 color: rgb(128, 31, 219);
+font-family: 'Times New Roman', Times, serif;
+}
+
+.logo{
+ font-size: 28px;
+ font-weight: 900;
+ letter-spacing: 0.3px;
+ color: blue;
+ font-family: cursive;
+}
+.span{
+color: coral;
 }
  
 

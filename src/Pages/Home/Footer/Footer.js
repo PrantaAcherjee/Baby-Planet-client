@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faFacebookF , faTwitterSquare,faGithub,faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 import "./Footer.css"
+import { NavLink } from 'react-router-dom';
 const Footer = () => {
     return (
 <div className=" footer-all">
@@ -10,10 +11,9 @@ const Footer = () => {
                 <div className="col-md-3 col-sm-12">
                 <div className="row d-flex justify-content-around">
     <div className="">
-        <div>   
-                
+        <div>               
                 <div>
-                    <h4><span style={{color:'coral',paddingBottom:'3px',fontWeight:'bold'}}>BABY WALKER</span></h4>
+                <div className='logo'> Baby <span className='span'>Planet</span></div>
                 <div className="d-flex align-items-center justify-content-around">
                  <div><h6>ADRESS :</h6></div>
                 <div><small>205 Olazu Familia, <br /> Herba Street Front USA</small></div>
@@ -57,6 +57,8 @@ const Footer = () => {
                 <div className="">
         <div>
         <h4 className="text-info">CUSTOMER SUPPORT</h4>
+        <NavLink style={{textDecoration:'none',color:'white'}} to="/aboutus">ABOUT</NavLink> <br/>
+        <NavLink style={{textDecoration:'none',color:'white'}} to="faq">FAQ</NavLink> <br/>
         Help and Ordering <br />
         Privacy Policy <br />
         Return & Cancellation <br />
@@ -85,7 +87,7 @@ const Footer = () => {
     </div>
             
     
-    <p className='pt-4 text-warning'>&copy; COPYRIGHT 2022 || ALL RIGHT RESERVED BABY WALKER</p>
+    <p className='pt-4 text-warning'>&copy; COPYRIGHT 2022 || ALL RIGHT RESERVED Baby Planet.</p>
 </div>
     );
 };

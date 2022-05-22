@@ -13,17 +13,15 @@ const Header = () => {
         <div className="menu-bar my-5">
         <Navbar  fixed="top" collapseOnSelect expand="lg" bg="light">
         <Container>
-        <Navbar.Brand><i class="text-secondary fas fa-baby-carriage "> 
-         <span style={{padding:'3px',color:'coral'}}>BABY WALKER</span> </i></Navbar.Brand>
+        <Navbar.Brand> 
+        <div className='logo'> Baby <span className='span'>Planet</span></div>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
          <Nav className="me-auto">
         </Nav>
         <Nav className='headers'>
         <NavLink to="/home">HOME</NavLink>
-         
-        <NavLink to="/aboutus">ABOUT</NavLink>
-        <NavLink to="faq">FAQ</NavLink>
         
         {user?.email &&
         <Link to="/dashboard">DASHBOARD</Link>

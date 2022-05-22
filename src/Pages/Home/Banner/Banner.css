@@ -1,13 +1,17 @@
 .banner {
-    background-image: url('https://as2.ftcdn.net/v2/jpg/00/95/29/43/500_F_95294341_Q2zBuRIoNc9cA5wYVqXXQxW7WRHYnHN3.jpg') ;
+    background-image: url('https://cdn.shopify.com/s/files/1/0119/4632/8123/files/slideshow_2.jpg?v=1631622707') ;
     height: 500px;
     background-blend-mode: overlay;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed;
+    background-attachment: cover;
     object-fit: cover;
+   
   }
-  .color{
-      color: rgb(233, 80, 53);
-  }
+   .lovely{
+       color: rgb(13, 217, 217);
+   }
+   .banner-info{
+       padding-top: 17rem;
+   }
