@@ -14,7 +14,7 @@ const Header = () => {
         <Navbar  fixed="top" collapseOnSelect expand="lg" bg="light">
         <Container>
         <Navbar.Brand> 
-        <div className='logo'> Baby <span className='span'>Planet</span></div>
+        <div className='logo'>Baby <span className='span'>Planet</span></div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

@@ -3,6 +3,9 @@ import React from 'react'
 const Features = () => {
   return (
     <div className='row p-4'>
+      <h3>Kids Accessories n Toys</h3>
+      <h1 className="text-danger fw-bold">Bingo Lingo</h1>
+      <h6>We create the best toy for your <br/> kids with safe plastic.</h6>
         <div className='col-md-3'>
         <div style={{marginBottom:'10px'}}>
         <img className='img-fluid' src='https://cdn.shopify.com/s/files/1/0119/4632/8123/files/img1_83e6a9d2-44f2-4299-9a0c-1bbcfa6678fc_large.jpg?v=1631703642' alt=''/>
