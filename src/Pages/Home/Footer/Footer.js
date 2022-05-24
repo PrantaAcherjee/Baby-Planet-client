@@ -6,7 +6,7 @@ import "./Footer.css"
 import { NavLink } from 'react-router-dom';
 const Footer = () => {
     return (
-<div className=" footer-all">
+<div style={{overflow:'hidden'}} className=" footer-all">
     <div className="row">
                 <div className="col-md-3 col-sm-12">
                 <div className="row d-flex justify-content-around">
@@ -87,7 +87,7 @@ const Footer = () => {
     </div>
             
     
-    <p className='pt-5 text-secondary'>&copy; Copyright 2022 || All Right Reserved BABY PLANET.</p>
+    <p className='pt-5 text-white'><small>&copy; Copyright 2022 || All Right Reserved BABY PLANET.</small></p>
 </div>
     );
 };

@@ -13,7 +13,25 @@ const Products = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [
+      {
+         breakpoint: 768,
+         settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2,
+             
+         }
+      },
+      {
+         breakpoint: 480,
+         settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+         }
+      }
+   ]
   };
 
   const[products,setProducts]=useState([]);
@@ -30,8 +48,9 @@ fetch('https://quiet-hamlet-36498.herokuapp.com/products')
       <Slider {...settings}>
        {
          products.map(pd=><div>
-           <Link to={`/order/${pd._id}`}>
-           <img className='img-fluid image' src={pd.img}/>
+            <img className='img-fluid image' src={pd.img}/>
+            <Link to={`/order/${pd._id}`}>
+            <button style={{width:'94%'}} className="bg-info text-white btn mt-2"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
            </Link>          
          </div>)
        }

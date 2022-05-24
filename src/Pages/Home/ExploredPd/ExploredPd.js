@@ -12,7 +12,7 @@ fetch('https://quiet-hamlet-36498.herokuapp.com/products')
 
   },[])
     return (
-        <div className="pt-5 bg ">
+        <div style={{overflow:'hidden'}} className="pt-5 bg ">
             <h2 className="pack-h1"><span style={{color:'white'}}> OUR ALL PRODUCTS</span></h2>
                     
 <div class="row row-cols-1 row-cols-md-2 g-6">

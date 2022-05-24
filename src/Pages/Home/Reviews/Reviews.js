@@ -11,7 +11,25 @@ const Reviews = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 2
+        slidesToScroll: 2,
+        responsive: [
+            {
+               breakpoint: 768,
+               settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                  initialSlide: 2,
+                   
+               }
+            },
+            {
+               breakpoint: 480,
+               settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1
+               }
+            }
+         ]
       };
     const [review,setReview]=useState([]);
     useEffect(()=>{
@@ -27,7 +45,7 @@ const Reviews = () => {
            <Slider {...settings}>
            {review.map(pd=><div
              key={pd._id}>            
-            <div className='mb-4'>
+            <div className='single-review'>
             <h5 className='text-info'>{pd.Name}</h5>      
             <p>{pd.description.slice(0,100)}</p>
             

@@ -2,4 +2,17 @@
 .style{
   color: gold;
 }
+.single-review{
+margin: 1.5rem;
+padding: 1rem;
+background-color: whitesmoke;
+height: 12rem;
+border: 2px solid rgb(179, 179, 215);
+ 
+}
+@media(max-width:900px){
+  .single-review{
+    height: 16rem;
+  }
+}
  
