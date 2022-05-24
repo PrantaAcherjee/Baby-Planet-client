@@ -10,7 +10,7 @@ const Products = () => {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -48,7 +48,7 @@ fetch('https://quiet-hamlet-36498.herokuapp.com/products')
       <Slider {...settings}>
        {
          products.map(pd=><div>
-            <img className='img-fluid image' src={pd.img}/>
+            <img className='img-fluid image' src={pd.img} alt=""/>
             <Link to={`/order/${pd._id}`}>
             <button style={{width:'94%'}} className="bg-info text-white btn mt-2"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
            </Link>          
