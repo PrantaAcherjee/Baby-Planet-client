@@ -25,7 +25,7 @@ const Reviews = () => {
             {
                breakpoint: 480,
                settings: {
-                  slidesToShow: 2,
+                  slidesToShow: 1,
                   slidesToScroll: 1
                }
             }
@@ -39,7 +39,7 @@ const Reviews = () => {
         
     },[])
     return (
-        <div>
+        <div style={{marginBottom:'5rem'}}>
             <h2 className="h2 my-5">User's Feadback</h2>
            <div>
            <Slider {...settings}>

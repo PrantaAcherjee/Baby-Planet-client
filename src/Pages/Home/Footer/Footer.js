@@ -12,22 +12,22 @@ const Footer = () => {
                 <div className="row d-flex justify-content-around">
     <div className="">
         <div>               
-                <div>
+                <div className='px-4'>
                 <div className='logo'> Baby <span className='span'>Planet</span></div>
-                <div className="d-flex align-items-center justify-content-around">
-                 <div><h6>ADRESS :</h6></div>
+                <div className="d-flex align-items-center justify-content-between">
+                <div>ADRESS :</div>
                 <div><small>205 Olazu Familia, <br /> Herba Street Front USA</small></div>
-                    </div>
-             <div className="d-flex justify-content-around align-items-center">
-                <div><h6>EMAIL :</h6></div>
-             <div><small>support@tadathemes.com</small></div>
-             </div>
-                <div className=" d-flex    align-items-center justify-content-around">
-             <div><h6>PHONE US :</h6></div>
-                 <div><small>002- 01008431112</small></div>
+                </div>
+                <div className="d-flex justify-content-between align-items-center">
+                <div>EMAIL:</div>
+                <div>support@tadathemes.com </div>             
+                </div>
+                <div className=" d-flex    align-items-center justify-content-between">
+             <div>PHONE US :</div>
+                 <div>002- 01008431112</div>
             </div>
-            <div className=" d-flex    align-items-center justify-content-around">
-                    <div><h6>Follow us on social :</h6></div>
+            <div className=" d-flex align-items-center justify-content-between">
+                    <div>Follow us on social :</div>
                  <div className="text-white"><FontAwesomeIcon icon={faFacebookF} /></div>
                  <div className="text-white"><FontAwesomeIcon icon={faTwitterSquare} /></div>
                  <div><FontAwesomeIcon icon={faGithub} /></div>
@@ -40,19 +40,18 @@ const Footer = () => {
         
     </div>
                 </div>
-                <div className="col-md-3">
-                <div className="">
-        <h4 className="text-secondary">OUR CATEGORIES</h4>
-        Clothing Sets <br />
-        Baby Girl Sets <br />
-        Baby Boys Sets <br />
-         Order Status <br />
-        Free Shipping
-        & Exchange <br />
-        Testimonials
-
-        </div>
-                </div>
+            <div className="col-md-3">
+            <div>
+           <h4 className="text-secondary">OUR CATEGORIES</h4>
+            Clothing Sets <br />
+            Baby Girl Sets <br />
+            Baby Boys Sets <br />
+            Order Status <br />
+            Free Shipping
+            & Exchange <br />
+            Testimonials
+            </div>
+            </div>
                 <div className="col-md-3">
                 <div className="">
         <div>
@@ -63,8 +62,8 @@ const Footer = () => {
         Privacy Policy <br />
         Return & Cancellation <br />
         Delevery Schedule <br />
-        Today's Deals <br />
-        Get a Call <br />
+         
+         
          
         </div>
 
@@ -86,8 +85,8 @@ const Footer = () => {
              </div>
     </div>
             
-    
-    <p className='pt-5 text-white'><small>&copy; Copyright 2022 || All Right Reserved BABY PLANET.</small></p>
+    <hr/>
+    <p className='pt-2 text-white'><small>&copy; Copyright 2022 || All Right Reserved BABY PLANET.</small></p>
 </div>
     );
 };
