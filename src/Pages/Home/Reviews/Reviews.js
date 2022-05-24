@@ -46,6 +46,7 @@ const Reviews = () => {
            {review.map(pd=><div
              key={pd._id}>            
             <div className='single-review'>
+            <h2><i class="fa-solid fa-user"></i></h2>
             <h5 className='text-info'>{pd.Name}</h5>      
             <p>{pd.description.slice(0,100)}</p>
             

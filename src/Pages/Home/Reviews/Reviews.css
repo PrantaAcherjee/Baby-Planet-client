@@ -5,14 +5,14 @@
 .single-review{
 margin: 1.5rem;
 padding: 1rem;
-background-color: whitesmoke;
-height: 12rem;
-border: 2px solid rgb(179, 179, 215);
- 
+background-color: #fff;
+height: 14rem;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 @media(max-width:900px){
   .single-review{
-    height: 16rem;
+    height: 18rem;
+    width: 80%;
   }
 }
  
