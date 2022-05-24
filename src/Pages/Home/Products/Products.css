@@ -1,11 +1,10 @@
-.name-color{
-    color:mediumturquoise
-}
+ 
 .h2{
-    color:indigo;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:gray;
+    font-family:cursive;
+    font-weight: 700;
+    margin: 1rem 0;
 }
 .image{
-    border-radius: 15px;
-    padding-top: 5px;
+  padding: 0 0.8rem;   
 }

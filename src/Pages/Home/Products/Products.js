@@ -1,7 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Products.css'
+import './Products.css';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+ 
+
 const Products = () => {
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1
+  };
+
   const[products,setProducts]=useState([]);
   useEffect(()=>{
 fetch('https://quiet-hamlet-36498.herokuapp.com/products')
@@ -11,30 +25,18 @@ fetch('https://quiet-hamlet-36498.herokuapp.com/products')
 
   },[])
     return (
-        <div className="mt-3">
-            <h2 className="h2">OUR SPECIAL PRODUCTS</h2>
-            <h6>Best baby walker in your touch which we we provide because we care your baby.</h6>
-             
-            
-      <div class="row row-cols-1 row-cols-md-3 g-6">
-      {products.map(pd=><div
-      className=""key={pd._id}>
-    
-      <img className="img-fluid image" src={pd.img} alt="" />
-      <h2 className="name-color">{pd.name}</h2>
-      <h5>Price:${pd.Price}</h5>
-      <p className="">Warrenty : {pd.warrenty}  years</p>
-      
-      <Link to={`/order/${pd._id}`}>
-      <button className="mb-3 bg-info text-white btn"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
-     </Link>
-      </div>)
-
-
-  }
-  
-</div> 
-        </div>
+      <>
+      <h2 className='h2'>Featured Products</h2>
+      <Slider {...settings}>
+       {
+         products.map(pd=><div>
+           <Link to={`/order/${pd._id}`}>
+           <img className='img-fluid image' src={pd.img}/>
+           </Link>          
+         </div>)
+       }
+     </Slider>
+     </>
     );
 };
 

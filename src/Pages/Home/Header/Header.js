@@ -22,6 +22,7 @@ const Header = () => {
         </Nav>
         <Nav className='headers'>
         <NavLink to="/home">HOME</NavLink>
+        <NavLink to="/explore">SHOP</NavLink>
         
         {user?.email &&
         <Link to="/dashboard">DASHBOARD</Link>

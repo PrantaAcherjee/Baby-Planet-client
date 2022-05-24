@@ -1,9 +1,18 @@
 import React ,{useState,useEffect}from 'react';
 import Rating from 'react-rating';
 import './Reviews.css';
- 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const Reviews = () => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 2
+      };
     const [review,setReview]=useState([]);
     useEffect(()=>{
         fetch('https://quiet-hamlet-36498.herokuapp.com/reviews')
@@ -13,13 +22,13 @@ const Reviews = () => {
     },[])
     return (
         <div>
-            <h2 className="text-secondary pt-5 px-3">USER'S FEADBACK </h2>
-            <br />
-           <div class="row row-cols-3 row-cols-md-4  w-75 mx-auto ">
-            {review.map(pd=><div
+            <h2 className="h2 my-5">User's Feadback</h2>
+           <div>
+           <Slider {...settings}>
+           {review.map(pd=><div
              key={pd._id}>            
-            <div className='single-div'>
-            <h5 className='text-success'>{pd.Name}</h5>      
+            <div className='mb-4'>
+            <h5 className='text-info'>{pd.Name}</h5>      
             <p>{pd.description.slice(0,100)}</p>
             
             <Rating
@@ -31,6 +40,8 @@ const Reviews = () => {
     
         </div>)
   }  
+     </Slider>
+           
         </div> 
         </div>
     );

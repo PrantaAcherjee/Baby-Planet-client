@@ -28,10 +28,10 @@ const Footer = () => {
             </div>
             <div className=" d-flex    align-items-center justify-content-around">
                     <div><h6>Follow us on social :</h6></div>
-                 <div className="text-info"><FontAwesomeIcon icon={faFacebookF} /></div>
-                 <div className="text-info"><FontAwesomeIcon icon={faTwitterSquare} /></div>
+                 <div className="text-white"><FontAwesomeIcon icon={faFacebookF} /></div>
+                 <div className="text-white"><FontAwesomeIcon icon={faTwitterSquare} /></div>
                  <div><FontAwesomeIcon icon={faGithub} /></div>
-                 <div className="text-info"><FontAwesomeIcon icon={faLinkedin} /></div>
+                 <div className="text-white"><FontAwesomeIcon icon={faLinkedin} /></div>
             </div>
                 </div>
     </div>
@@ -42,7 +42,7 @@ const Footer = () => {
                 </div>
                 <div className="col-md-3">
                 <div className="">
-        <h4 className="text-info">OUR CATEGORIES</h4>
+        <h4 className="text-secondary">OUR CATEGORIES</h4>
         Clothing Sets <br />
         Baby Girl Sets <br />
         Baby Boys Sets <br />
@@ -56,7 +56,7 @@ const Footer = () => {
                 <div className="col-md-3">
                 <div className="">
         <div>
-        <h4 className="text-info">CUSTOMER SUPPORT</h4>
+        <h4 className="text-secondary">CUSTOMER SUPPORT</h4>
         <NavLink style={{textDecoration:'none',color:'white'}} to="/aboutus">ABOUT</NavLink> <br/>
         <NavLink style={{textDecoration:'none',color:'white'}} to="faq">FAQ</NavLink> <br/>
         Help and Ordering <br />
@@ -73,13 +73,13 @@ const Footer = () => {
                 </div>
                 <div className="col-md-3">
                     <div>
-                    <h4 className="text-info">NEWSLETTER</h4>
+                    <h4 className="text-secondary">NEWSLETTER</h4>
                 <p><small>
                     Enter your email and we’ll send you latest information plans.
                 </small></p>
              
                       
-                     <input type="email" placeholder="Enter your Email" />
+                     <input style={{outline:'none'}} type="email" placeholder="Enter your Email" />
                     <br />
                     <button className="bg-info p-2 m-2 text-white rounded-pill">SUBSCRIBE US</button>
                     </div>
@@ -87,7 +87,7 @@ const Footer = () => {
     </div>
             
     
-    <p className='pt-4 text-warning'>&copy; COPYRIGHT 2022 || ALL RIGHT RESERVED Baby Planet.</p>
+    <p className='pt-5 text-secondary'>&copy; Copyright 2022 || All Right Reserved BABY PLANET.</p>
 </div>
     );
 };
