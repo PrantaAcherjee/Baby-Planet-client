@@ -10,30 +10,31 @@ const Footer = () => {
     <div className="row">
                 <div className="col-md-3 col-sm-12">
                 <div className="row d-flex justify-content-around">
-    <div className="">
-        <div>               
-                <div className='px-4'>
+               <div className="">
+                <div>               
+                <div className='px-4 py-3'>
                 <div className='logo'> Baby <span className='span'>Planet</span></div>
-                <div className="d-flex align-items-center justify-content-between">
-                <div>ADRESS :</div>
-                <div><small>205 Olazu Familia, <br /> Herba Street Front USA</small></div>
+                <div className="d-flex justify-content-between align-items-center py-2">
+                <div>Address: <small>Herba Street Front USA</small></div>      
                 </div>
-                <div className="d-flex justify-content-between align-items-center">
-                <div>EMAIL:</div>
-                <div>support@tadathemes.com </div>             
+                <div className="d-flex justify-content-between align-items-center py-2">
+                <div>Email: <small>support@tadathemes.com </small></div>      
                 </div>
-                <div className=" d-flex    align-items-center justify-content-between">
-             <div>PHONE US :</div>
-                 <div>002- 01008431112</div>
+                <div className=" d-flex    align-items-center justify-content-between py-2">
+             <div>Phone us: <small>002- 01008431112</small></div>
             </div>
-            <div className=" d-flex align-items-center justify-content-between">
-                    <div>Follow us on social :</div>
-                 <div className="text-white"><FontAwesomeIcon icon={faFacebookF} /></div>
-                 <div className="text-white"><FontAwesomeIcon icon={faTwitterSquare} /></div>
-                 <div><FontAwesomeIcon icon={faGithub} /></div>
-                 <div className="text-white"><FontAwesomeIcon icon={faLinkedin} /></div>
-            </div>
-                </div>
+
+            <div className=" d-flex align-items-center justify-content-around pt-3 fs-4 text-white">
+                 
+                  
+                 <FontAwesomeIcon icon={faFacebookF} />
+                 <FontAwesomeIcon icon={faGithub} />
+                 <FontAwesomeIcon icon={faLinkedin} />
+                 <FontAwesomeIcon icon={faTwitterSquare} />
+                
+                            
+              </div>
+              </div>
     </div>
     </div>
         
@@ -42,51 +43,55 @@ const Footer = () => {
                 </div>
             <div className="col-md-3">
             <div>
-           <h4 className="text-secondary">OUR CATEGORIES</h4>
-            Clothing Sets <br />
-            Baby Girl Sets <br />
-            Baby Boys Sets <br />
-            Order Status <br />
-            Free Shipping
-            & Exchange <br />
-            Testimonials
+           <h5 style={{color:'rgb(55, 53, 53)'}}>Our categories</h5>
+           <hr/>
+           <small>Clothing Sets</small> <br/>
+           <small>Baby Girl Sets</small><br/>
+           <small>Baby Boys Sets</small><br/>
+           <small>Free Shipping
+            & Exchange</small><br/>
+           <small>Testimonials</small>
             </div>
             </div>
-                <div className="col-md-3">
-                <div className="">
+
+        <div className="col-md-3">
+        <div className="">
         <div>
-        <h4 className="text-secondary">CUSTOMER SUPPORT</h4>
-        <NavLink style={{textDecoration:'none',color:'white'}} to="/aboutus">ABOUT</NavLink> <br/>
-        <NavLink style={{textDecoration:'none',color:'white'}} to="faq">FAQ</NavLink> <br/>
-        Help and Ordering <br />
-        Privacy Policy <br />
-        Return & Cancellation <br />
-        Delevery Schedule <br />
-         
-         
-         
+        <h5 style={{color:'rgb(55, 53, 53)'}}>Customer support</h5>
+        <hr/>
+        <NavLink style={{textDecoration:'none',color:'rgb(55, 53, 53)'}} to="/aboutus"><small>About us</small></NavLink> <br/>
+        <NavLink style={{textDecoration:'none',color:'rgb(55, 53, 53)'}} to="faq"><small>Help & FAQ</small></NavLink> <br/>
+        <small>Privacy Policy </small> <br/>
+        <small>Delivery schedule </small> <br/>
+        <small>Exchanging</small> <br/>
+        </div>
+        </div>
         </div>
 
+        <div className="col-md-3">
+        <div >
+        <h5 style={{color:'rgb(55, 53, 53)'}}>Newsletter</h5>
+        <hr/>
+        <p><small>
+         Enter your email and we’ll send you latest information plans.
+         </small></p>                      
+         <input className='p-2' style={{outline:'none',borderRadius:'7px',border:'none'}} type="email" placeholder="Enter your Email" />
+         <br />
+        <button className="p-2 m-2 text-white bg-info rounded-pill border">Subscribe us</button>
         </div>
-       
-                </div>
-                <div className="col-md-3">
-                    <div>
-                    <h4 className="text-secondary">NEWSLETTER</h4>
-                <p><small>
-                    Enter your email and we’ll send you latest information plans.
-                </small></p>
-             
-                      
-                     <input style={{outline:'none'}} type="email" placeholder="Enter your Email" />
-                    <br />
-                    <button className="bg-info p-2 m-2 text-white rounded-pill">SUBSCRIBE US</button>
-                    </div>
-             </div>
+        </div>
     </div>
             
     <hr/>
-    <p className='pt-2 text-white'><small>&copy; Copyright 2022 || All Right Reserved BABY PLANET.</small></p>
+    <div>
+    <div>
+    <p style={{color:'rgb(55, 53, 53)'}} className='pt-2'><small>&copy; Copyright 2022 || All Right Reserved BABY PLANET.</small></p>
+    </div>
+    <div>
+
+    </div>
+    </div>
+    
 </div>
     );
 };
