@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .footer-all{
     background-color: #00d4c5;
     margin-top: 10px;
     padding-top: 10px;
-    color: rgb(55, 53, 53);   
+    color: rgb(55, 53, 53); 
+    font-family: 'Roboto', sans-serif;  
 }
