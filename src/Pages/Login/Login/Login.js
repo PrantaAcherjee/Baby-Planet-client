@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./Login.css";
 import { useHistory, useLocation } from 'react-router';
 import UseAuth from '../../../Hooks/UseAuth';
 import { Link } from 'react-router-dom';
@@ -33,20 +34,10 @@ const handleEmailPasswordLogin=(e)=>{
 }
 
     return (
-        <div className="row">
-            <div className="col-md-8">
-                <div>
-                    <img className="img-fluid" src="https://as2.ftcdn.net/v2/jpg/03/86/51/03/500_F_386510351_03Qk3je4FGnVLo4vXRdOpoDWfZjtmajd.jpg" alt="" />
-                    
-                </div>
-                
-            </div>
-            <div className="col-md-4">
-                <br /><br /> <br /> <br />
-            <button className="bg-danger text-white fw-bold rounded-pill" onClick={handleGoogleLogin}><i class="fab fa-google"></i> SIGNIN WITH GOOGLE</button>
-            <br /> 
-             <br /> 
-            <form onSubmit={handleEmailPasswordLogin} >
+        <div className="container">
+         
+            <form onSubmit={handleEmailPasswordLogin} className="auth-section">
+            <h3 className="text-secondary">Sign in account</h3>
                     <input className="my-2" type="email" placeholder="Enter your Email"
                     onChange={handleEmailChange}
                     required />
@@ -56,19 +47,20 @@ const handleEmailPasswordLogin=(e)=>{
                     required />
                     <br />
                     <br />
-                    <button className="bg-success text-white px-2 rounded-pill " type="submit">SIGN IN</button>
+                    <button type="submit" className='signInBtn'>SIGN IN</button>
                     {error &&
                     <Alert className='danger'>
                     You are given wrong info  
                     </Alert>          
                     }
-            </form>
+                 </form>
+                 <button className='signInBtn mt-2'  onClick={handleGoogleLogin}><i class="fab fa-google"></i> SIGNIN WITH GOOGLE</button>
                 <br />
-                <h5 className="fw-bold text-danger">Are You New User?</h5>
-                <Link style={{textDecoration:'none',fontWeight:'bold'}} to="/register">Please Register</Link>
+                <p className="fw-bold">Are you new user?<Link style={{textDecoration:'none',fontWeight:'bold'}} to="/register"> Please Register</Link></p>
+                
             </div>
 
-        </div>
+        
     );
 };
 

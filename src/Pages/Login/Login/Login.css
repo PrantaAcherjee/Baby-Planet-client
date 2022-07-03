@@ -1,0 +1,27 @@
+ 
+.auth-section{
+  padding: 5rem 0;
+ background-color: rgba(187, 255, 255, 0.938);
+ margin-top: 5rem;
+ box-shadow: 10px 5px 5px gray;
+     
+}
+.auth-section input{
+width: 75%;
+height: 3.5rem;
+outline: none;
+margin-top: 1.5rem;
+border: none;
+background-color: rgba(255, 255, 255, 0.918);
+border-radius: 10px;
+}
+.signInBtn{
+width: 75%;
+height: 3.2rem;
+border: none;
+background-color:rgb(3, 180, 180);
+color: #fff;
+font-size: 18px;
+margin-bottom: 1rem;
+border-radius: 10px;   
+}
