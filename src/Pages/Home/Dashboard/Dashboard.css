@@ -1,21 +1,39 @@
 .links-part{
-    background-color: rgb(205, 235, 209);
-    height: 400px;
-    border-radius: 15px; 
-    margin-top: 5px;
+border-right: 2px solid whitesmoke;
+min-height: 100vh;
+overflow:hidden;
+
 }
 .links-part a {
-     font-size: large;
-     font-weight: bold;
+display: flex;
+flex-direction: column;
+text-decoration: none;
+font-size: 22px;
+color: gray;
+margin-top: 0.5rem;
+font-weight: 700;
+border-bottom: 2px solid whitesmoke;
 }
-
 .dash-home{
-background-image: url('https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGRhc2hib2FyZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60');
-min-height: 100vh;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-background-blend-mode: overlay;
- 
-
+  display: grid;
+  grid-template-columns: auto auto;
 }
+
+@media (max-width:900px){
+    .dash-home{         
+     grid-template-columns: auto;      
+    }
+}
+    
+
+.dash-home div{
+margin: 2rem;
+padding: 3rem;
+background-color: rgb(37, 216, 147);
+color: white;
+border-radius: 5px;
+font-size: 20px;
+font-weight: 900; 
+}
+
+ 

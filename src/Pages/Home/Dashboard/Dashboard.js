@@ -40,7 +40,7 @@ return (
         <Offcanvas.Body>
         {/* <!-- Sidebar content here --> */}
         <Link style={{textDecoration:'none',color:'grey'}} to={`${url}`}>
-            <i class="fas fa-baby"></i> DASHBOARD
+            <i class="fas fa-home"></i> DASHBOARD
             </Link>
             <br />
             <Link style={{textDecoration:'none',color:'grey'}} to="/home"><i class="fas fa-plus-circle"></i>  GET ORDER
@@ -69,46 +69,42 @@ return (
               <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/manageservices`}>
               <i class="fas fa-tasks"></i> Manage Services
               </Link>
-              </div>}
-             
-             
-            
-            
+              </div>}                   
         </Offcanvas.Body>
       </Offcanvas>
           </div>
           
-          <div className="col-md-3 py-5 links-part d-none d-lg-block">
+          <div className="col-md-3 links-part d-none d-lg-block">
 
-            <Link style={{textDecoration:'none',color:'grey'}} to={`${url}`}>
-            <i class="fas fa-baby"></i> DASHBOARD
+            <Link   to={`${url}`}>
+            <i class="fas fa-home"></i> Dashboard
             </Link>
             <br />
-            <Link style={{textDecoration:'none',color:'grey'}} to="/home"><i class="fas fa-plus-circle"></i>  GET ORDER
+            <Link  to="/home"><i class="fas fa-plus-circle"></i>  Get products
             </Link>
             <br />
-            <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/myorders`}>
-             <i class="fas fa-cart-arrow-down"></i> ALL ORDERS 
+            <Link  to={`${url}/myorders`}>
+             <i class="fas fa-cart-arrow-down"></i> My orders 
             </Link>
             <br />
             
-            <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/reviews`}>
-            <i class="far fa-comment-dots"></i> GIVE REVIEWS
+            <Link  to={`${url}/reviews`}>
+            <i class="far fa-comment-dots"></i> Share reviews
             </Link>
             <br />
 
               {admin && <div>
                 
                 <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/makeAdmin`}>
-                <i class="fas fa-user-plus"></i> Make Admin
+                <i class="fas fa-user-plus"></i> Make admin
               </Link>
               <br />
               <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/addservices`}>
-              <i class="fas fa-plus-square"></i> Add Services
+              <i class="fas fa-plus-square"></i> Add services
               </Link>
               <br />
-              <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/manageservices`}>
-              <i class="fas fa-tasks"></i> Manage Services
+              <Link  to={`${url}/manageservices`}>
+              <i class="fas fa-tasks"></i> Manage services
               </Link>
               </div>}
              

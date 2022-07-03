@@ -3,9 +3,15 @@ import './Dashboard.css';
 
 const DashboardHome = () => {
     return (
+        <>
         <div className="dash-home">
-           <h2 className='text-info pt-2'> Welcome To Our Dashboard</h2> 
+            <div>Total Order : 5</div>
+            <div>My reviews edit</div>
+            <div>To be paid: $300</div>
+            <div>Cart info</div>
         </div>
+        </>
+        
     );
 };
 
