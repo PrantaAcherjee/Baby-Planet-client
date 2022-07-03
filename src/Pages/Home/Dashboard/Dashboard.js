@@ -1,5 +1,6 @@
-import React from 'react';
-import "./Dashboard.css"
+import React,{useState}from 'react';
+import "./Dashboard.css";
+import { Button, Offcanvas } from 'react-bootstrap';
  
 import {
     Switch,
@@ -19,10 +20,65 @@ import Payments from './Payments';
 
 const Dashboard = () => {
 const {admin}=UseAuth();
-let { path, url } = useRouteMatch();   
-    return (
+let { path, url } = useRouteMatch();
+const [show, setShow] = useState(false);
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
+
+return (
+  <div className=''>
+    
         <div className='pt-4 row'>
-          <div className="col-md-3 py-5 links-part">
+          <div className='col-12 mt-3 d-block d-lg-none'>
+          <Button variant="primary" onClick={handleShow}>
+           Menu
+          </Button>
+          <Offcanvas show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title></Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+        {/* <!-- Sidebar content here --> */}
+        <Link style={{textDecoration:'none',color:'grey'}} to={`${url}`}>
+            <i class="fas fa-baby"></i> DASHBOARD
+            </Link>
+            <br />
+            <Link style={{textDecoration:'none',color:'grey'}} to="/home"><i class="fas fa-plus-circle"></i>  GET ORDER
+            </Link>
+            <br />
+            <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/myorders`}>
+             <i class="fas fa-cart-arrow-down"></i> ALL ORDERS 
+            </Link>
+            <br />
+            
+            <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/reviews`}>
+            <i class="far fa-comment-dots"></i> GIVE REVIEWS
+            </Link>
+            <br />
+
+              {admin && <div>
+                
+                <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/makeAdmin`}>
+                <i class="fas fa-user-plus"></i> Make Admin
+              </Link>
+              <br />
+              <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/addservices`}>
+              <i class="fas fa-plus-square"></i> Add Services
+              </Link>
+              <br />
+              <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/manageservices`}>
+              <i class="fas fa-tasks"></i> Manage Services
+              </Link>
+              </div>}
+             
+             
+            
+            
+        </Offcanvas.Body>
+      </Offcanvas>
+          </div>
+          
+          <div className="col-md-3 py-5 links-part d-none d-lg-block">
 
             <Link style={{textDecoration:'none',color:'grey'}} to={`${url}`}>
             <i class="fas fa-baby"></i> DASHBOARD
@@ -87,6 +143,7 @@ let { path, url } = useRouteMatch();
         </Switch>
          </div>  
         </div>
+  </div>     
     );
 };
 

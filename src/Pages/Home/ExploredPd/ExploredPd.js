@@ -7,7 +7,7 @@ import { DropdownButton,Dropdown,ButtonGroup } from 'react-bootstrap';
 const ExploredPd = () => {
 const[products,setProducts]=useState([]);
 const [currentPage,setCurrentPage]=useState(1);
-const [postPerPage,setPostPerPage]=useState(5);
+const [postPerPage]=useState(5);
 
 useEffect(()=>{
 fetch('https://quiet-hamlet-36498.herokuapp.com/products')
@@ -20,13 +20,12 @@ const indexOfLastPost=currentPage*postPerPage;
 const indexOfFirstPost=indexOfLastPost-postPerPage;
 const currentPosts=products.slice(indexOfFirstPost,indexOfLastPost);
 
+// pagination 
 const pageNumbers=[];
 for (let i=1; i<=Math.ceil(products.length/postPerPage);i++){
   pageNumbers.push(i);
 }
-
 const paginate=(pageNumber)=>setCurrentPage(pageNumber);
-
 
     return (
         <div style={{overflow:'hidden',marginTop:'4rem'}}>
@@ -50,14 +49,12 @@ const paginate=(pageNumber)=>setCurrentPage(pageNumber);
                    <div className='shop-head'>
                    <DropdownButton style={{width:'30%'}} as={ButtonGroup} title="Paginate By" id="bg-nested-dropdown">
                    {
-              pageNumbers.map(number=>(
-                <Dropdown.Item eventKey="1" key={number}  onClick={()=>paginate(number)}>
-               
-                    {number}
-                 
-                </Dropdown.Item>       
-              ))
-              }     
+                    pageNumbers.map(number=>(
+                    <Dropdown.Item eventKey="1" key={number}  onClick={()=>paginate(number)}>
+                    {number}                
+                    </Dropdown.Item>       
+                     ))
+                     }     
                     </DropdownButton>
                    <DropdownButton style={{width:'30%'}} as={ButtonGroup} title="Sort By" id="bg-nested-dropdown">
                     <Dropdown.Item eventKey="1">Best Selling</Dropdown.Item>
@@ -85,15 +82,10 @@ const paginate=(pageNumber)=>setCurrentPage(pageNumber);
                 </div>)
                  } 
                 </div>
-                </div>
-                 
-                
+                </div>                
                </div> 
               
-              }
-           
-           
- 
+              }  
         <Footer></Footer>
         </div>
     );
