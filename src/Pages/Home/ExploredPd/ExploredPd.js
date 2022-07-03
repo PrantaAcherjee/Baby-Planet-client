@@ -3,15 +3,31 @@ import "./ExploredPd.css"
 import { Link } from 'react-router-dom';
 import Footer from '../../Home/Footer/Footer';
 import { DropdownButton,Dropdown,ButtonGroup } from 'react-bootstrap';
+
 const ExploredPd = () => {
-  const[products,setProducts]=useState([]);
-  useEffect(()=>{
+const[products,setProducts]=useState([]);
+const [currentPage,setCurrentPage]=useState(1);
+const [postPerPage,setPostPerPage]=useState(5);
+
+useEffect(()=>{
 fetch('https://quiet-hamlet-36498.herokuapp.com/products')
 .then(res=>res.json())
 .then(data=>setProducts(data));
+},[])
+
+// get current post 
+const indexOfLastPost=currentPage*postPerPage;
+const indexOfFirstPost=indexOfLastPost-postPerPage;
+const currentPosts=products.slice(indexOfFirstPost,indexOfLastPost);
+
+const pageNumbers=[];
+for (let i=1; i<=Math.ceil(products.length/postPerPage);i++){
+  pageNumbers.push(i);
+}
+
+const paginate=(pageNumber)=>setCurrentPage(pageNumber);
 
 
-  },[])
     return (
         <div style={{overflow:'hidden',marginTop:'4rem'}}>
           {
@@ -33,10 +49,15 @@ fetch('https://quiet-hamlet-36498.herokuapp.com/products')
                 <div className='col-md-9'>
                    <div className='shop-head'>
                    <DropdownButton style={{width:'30%'}} as={ButtonGroup} title="Paginate By" id="bg-nested-dropdown">
-                    <Dropdown.Item eventKey="1">1</Dropdown.Item>
-                    <Dropdown.Item eventKey="2">2</Dropdown.Item>
-                    <Dropdown.Item eventKey="2">3</Dropdown.Item>
-                    <Dropdown.Item eventKey="2">4</Dropdown.Item>
+                   {
+              pageNumbers.map(number=>(
+                <Dropdown.Item eventKey="1" key={number}  onClick={()=>paginate(number)}>
+               
+                    {number}
+                 
+                </Dropdown.Item>       
+              ))
+              }     
                     </DropdownButton>
                    <DropdownButton style={{width:'30%'}} as={ButtonGroup} title="Sort By" id="bg-nested-dropdown">
                     <Dropdown.Item eventKey="1">Best Selling</Dropdown.Item>
@@ -48,7 +69,7 @@ fetch('https://quiet-hamlet-36498.herokuapp.com/products')
    
                    </div>
                 <div class="row row-cols-1 row-cols-md-2 g-4">
-                {products.map(pd=><div
+                {currentPosts.map(pd=><div
                 className="" key={pd.id}>   
                  <div className='image-div'>
                  <img className="img-fluid" src={pd.img} alt="" />
@@ -71,7 +92,7 @@ fetch('https://quiet-hamlet-36498.herokuapp.com/products')
               
               }
            
-                    
+           
  
         <Footer></Footer>
         </div>
