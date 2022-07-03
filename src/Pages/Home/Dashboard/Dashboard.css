@@ -6,9 +6,11 @@ overflow:hidden;
 }
 .links-part a {
 display: flex;
-flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+margin-left: 10px;
 text-decoration: none;
-font-size: 22px;
+font-size: 18px;
 color: gray;
 margin-top: 0.5rem;
 font-weight: 700;
@@ -34,6 +36,13 @@ color: white;
 border-radius: 5px;
 font-size: 20px;
 font-weight: 900; 
+}
+.icon-style{
+padding: 5px;
+background-color: white;
+color:blueviolet;
+margin-right: 10px;
+box-shadow: 1px 3px 3px black;
 }
 
  

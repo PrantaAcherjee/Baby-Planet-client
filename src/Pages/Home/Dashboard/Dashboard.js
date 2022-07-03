@@ -37,74 +37,88 @@ return (
         <Offcanvas.Header closeButton>
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className="links-part">
         {/* <!-- Sidebar content here --> */}
-        <Link style={{textDecoration:'none',color:'grey'}} to={`${url}`}>
-            <i class="fas fa-home"></i> DASHBOARD
+        <Link   to={`${url}`}>
+            <i class="fas fa-home icon-style"></i>
+            <span>Dashboard</span>            
             </Link>
             <br />
-            <Link style={{textDecoration:'none',color:'grey'}} to="/home"><i class="fas fa-plus-circle"></i>  GET ORDER
-            </Link>
-            <br />
-            <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/myorders`}>
-             <i class="fas fa-cart-arrow-down"></i> ALL ORDERS 
-            </Link>
-            <br />
+            <Link  to="/home"><i class="fas fa-plus-circle icon-style"></i>
+            <span>Get products</span>
             
-            <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/reviews`}>
-            <i class="far fa-comment-dots"></i> GIVE REVIEWS
-            </Link>
-            <br />
-
-              {admin && <div>
-                
-                <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/makeAdmin`}>
-                <i class="fas fa-user-plus"></i> Make Admin
-              </Link>
-              <br />
-              <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/addservices`}>
-              <i class="fas fa-plus-square"></i> Add Services
-              </Link>
-              <br />
-              <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/manageservices`}>
-              <i class="fas fa-tasks"></i> Manage Services
-              </Link>
-              </div>}                   
-        </Offcanvas.Body>
-      </Offcanvas>
-          </div>
-          
-          <div className="col-md-3 links-part d-none d-lg-block">
-
-            <Link   to={`${url}`}>
-            <i class="fas fa-home"></i> Dashboard
-            </Link>
-            <br />
-            <Link  to="/home"><i class="fas fa-plus-circle"></i>  Get products
             </Link>
             <br />
             <Link  to={`${url}/myorders`}>
-             <i class="fas fa-cart-arrow-down"></i> My orders 
+             <i class="fas fa-cart-arrow-down icon-style"></i>
+             <span>My orders</span>  
             </Link>
             <br />
             
             <Link  to={`${url}/reviews`}>
-            <i class="far fa-comment-dots"></i> Share reviews
+            <i class="far fa-comment-dots icon-style"></i>
+            <span> Share reviews</span>         
             </Link>
             <br />
 
               {admin && <div>
                 
                 <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/makeAdmin`}>
-                <i class="fas fa-user-plus"></i> Make admin
+                <i class="fas fa-user-plus icon-style"></i> <span>Make admin</span>
               </Link>
               <br />
               <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/addservices`}>
-              <i class="fas fa-plus-square"></i> Add services
+              <i class="fas fa-plus-square icon-style"></i> <span>Add services</span>
               </Link>
               <br />
               <Link  to={`${url}/manageservices`}>
-              <i class="fas fa-tasks"></i> Manage services
+              <i class="fas fa-tasks icon-style"></i> 
+              <span> Manage services</span>
+             
+              </Link>
+              </div>}          
+        </Offcanvas.Body>
+      </Offcanvas>
+          </div>
+          
+          <div className="col-md-2 links-part d-none d-lg-block">
+
+            <Link   to={`${url}`}>
+            <i class="fas fa-home icon-style"></i>
+            <span>Dashboard</span>            
+            </Link>
+            <br />
+            <Link  to="/home"><i class="fas fa-plus-circle icon-style"></i>
+            <span>Get products</span>
+            
+            </Link>
+            <br />
+            <Link  to={`${url}/myorders`}>
+             <i class="fas fa-cart-arrow-down icon-style"></i>
+             <span>My orders</span>  
+            </Link>
+            <br />
+            
+            <Link  to={`${url}/reviews`}>
+            <i class="far fa-comment-dots icon-style"></i>
+            <span> Share reviews</span>         
+            </Link>
+            <br />
+
+              {admin && <div>
+                
+                <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/makeAdmin`}>
+                <i class="fas fa-user-plus icon-style"></i> <span>Make admin</span>
+              </Link>
+              <br />
+              <Link style={{textDecoration:'none',color:'grey'}} to={`${url}/addservices`}>
+              <i class="fas fa-plus-square icon-style"></i> <span>Add services</span>
+              </Link>
+              <br />
+              <Link  to={`${url}/manageservices`}>
+              <i class="fas fa-tasks icon-style"></i> 
+              <span> Manage services</span>
+             
               </Link>
               </div>}
              
@@ -112,7 +126,7 @@ return (
 
            
 
-          <div className="col-md-9 details-part">
+          <div className="col-md-10 details-part">
            
         <Switch>
             <Route exact path={path}>
