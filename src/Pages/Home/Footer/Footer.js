@@ -81,7 +81,7 @@ const Footer = () => {
          </small></p>                      
          <input className='p-2' style={{outline:'none',borderRadius:'7px',border:'none'}} type="email" placeholder="Enter your Email" />
          <br />
-        <button className="p-2 m-2 text-white bg-info rounded-pill border">Subscribe us</button>
+        <button className="p-2 m-2 text-white bg-danger rounded-pill border">Subscribe us</button>
         </div>
         </div>
     </div>

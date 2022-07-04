@@ -40,16 +40,17 @@ const Reviews = () => {
     },[])
     return (
         <div style={{marginBottom:'5rem'}}>
-            <h2 className="h2 my-5">User's Feadback</h2>
+            <h2 className="h2 my-5">Testimonials</h2>
            <div>
            <Slider {...settings}>
            {review.map(pd=><div
              key={pd._id}>            
             <div className='single-review'>
-            <h2><i class="fa-solid fa-user"></i></h2>
-            <h5 className='text-info'>{pd.Name}</h5>      
-            <p>{pd.description.slice(0,100)}</p>
-            
+            <h2><i class="fa-solid fa-circle-user text-secondary fs-1"></i></h2>
+            <h5 className='text-success'>{pd.Name}</h5>      
+            <p>
+            <small>{pd.description.slice(0,100)}</small>
+            </p>           
             <Rating
             initialRating={pd.ratings}
             emptySymbol="far fa-star style"

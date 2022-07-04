@@ -1,0 +1,31 @@
+
+.grid{
+display: grid;
+grid-template-columns: auto auto auto;
+justify-content: space-around;
+align-items: center;
+margin-top: 5rem;
+}
+.grid div{
+border: 1px solid rgb(187, 177, 177);
+margin: 3rem;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 5px 7px #ada8a8;
+position: relative;
+}
+.grid div span{
+padding:20px 24px;
+background-color:rgb(10, 195, 10);
+border-radius: 50%;
+color: aliceblue;
+margin-top: -50px;
+position: absolute;
+ align-items: center;
+}
+
+@media(max-width: 900px){
+.grid{
+grid-template-columns:auto;      
+}
+}
