@@ -16,15 +16,19 @@ fetch(`https://quiet-hamlet-36498.herokuapp.com/orders/${productID}`)
 .then(data=>setPay(data))
 },[productID])
     return (
-        <div className='pt-4'>
-            <h4><i class="fas fa-money-check-alt text-success"></i> PAY YOUR CHARGE WITH STRIPE</h4>
-            <h4>Baby Walker</h4>
-            <h5 className='mb-5'>Please pay: ${pay.price}</h5>
+        <div className='payment-page'>
+            <h5>Payment with Debit/Credit card</h5>
+            <h6>Amount to be paid: ${pay.price}</h6>
             {pay?.price &&
-                <Elements stripe={stripePromise}>
+            <Elements stripe={stripePromise}>
             <CheckoutForm pay={pay} />
             </Elements>
             }
+            <div className='cards'>
+            <i class="fa-brands fa-cc-visa"></i>
+            <i class="fa-brands fa-cc-stripe"></i>
+            <i class="fa-brands fa-cc-paypal"></i>
+            </div>
         </div>
     );
 };

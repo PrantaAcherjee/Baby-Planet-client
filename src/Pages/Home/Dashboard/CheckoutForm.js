@@ -89,15 +89,15 @@ e.preventDefault();
 }
     return (
     <div>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='form'>
       <CardElement
         options={{
           style: {
             base: {
               fontSize: '16px',
-              color: '#424770',
+              color: 'white',
               '::placeholder': {
-                color: '#aab7c4',
+                color: 'cyan',
               },
             },
             invalid: {
